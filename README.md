@@ -1,6 +1,6 @@
 This is a Next JS Starter
 
-##:rocket: Getting Started
+:rocket:## Getting Started
 
 Run the following command to create a new project with this Starter:
 
