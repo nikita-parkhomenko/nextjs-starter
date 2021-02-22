@@ -1,13 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Next JS Starter
 
-## Getting Started
+##:rocket: Getting Started
 
-First, run the development server:
+Run the following command to create a new project with this Starter:
 
 ```bash
-npm run dev
+yarn create next-app my-app -e https://github.com/nikita-parkhomenko/nextjs-starter
 # or
-yarn dev
+npx create-next-app my-app -e https://github.com/nikita-parkhomenko/nextjs-starter
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
