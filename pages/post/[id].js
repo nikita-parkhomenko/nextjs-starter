@@ -1,8 +1,14 @@
+
 import { useRouter } from 'next/router';
+
+import { PrivatLayout } from '../../layout/privat-layout';
 
 export default function Post() {
     const router = useRouter();
 
-    console.log('router: ', router);
-    return <h2>Post: {router.query.id}</h2>
+    return (
+        <PrivatLayout>
+            <h2>Post: {router.query.id}</h2>
+        </PrivatLayout>
+    )
 }
