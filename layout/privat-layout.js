@@ -8,8 +8,6 @@ export function PrivatLayout({ children, title = 'App Title | Next course' }) {
         <>
             <Head>
                 <title>{ title }</title>
-                <meta charSet="utf-8" />
-                <meta name="description" content="This is basic next js project" />
             </Head>
             <Header />
             <main>
