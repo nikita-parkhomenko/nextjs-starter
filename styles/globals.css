@@ -6,10 +6,20 @@ body {
 }
 
 a {
-  color: mediumvioletred;
+  color: #b5b5b5;
   text-decoration: none;
+  transition: all 0.5s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: aliceblue;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.pointer {
+  cursor: pointer;
 }

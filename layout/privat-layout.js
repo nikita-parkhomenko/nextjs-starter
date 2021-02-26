@@ -1,7 +1,10 @@
 
 import Head from 'next/head';
+import { Row, Col } from 'reactstrap';
 
+// Components
 import { Header } from './header';
+import { SideBar } from './side-bar';
 
 export function PrivatLayout({ children, title = 'App Title | Next course' }) {
     return (
@@ -10,30 +13,16 @@ export function PrivatLayout({ children, title = 'App Title | Next course' }) {
                 <title>{ title }</title>
             </Head>
             <Header />
-            <main>
-                { children }
-            </main>
-            <style jsx global >{`
-                nav {
-                    position: fixed;
-                    height: 50px;
-                    left: 0;
-                    right: 0;
-                    top: 0;
-                    background: lightblue;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center
-                }
-                nav a {
-                    color: #fff;
-                    text-decoration: none;
-                }
-                main {
-                  margin: 50px;
-                  padding: 10px;
-                }
-            `}</style>
+            <Row>
+                {/*<Col sm="2">*/}
+                {/*    <SideBar />*/}
+                {/*</Col>*/}
+                <Col sm="12">
+                    <main className="m-4">
+                        {children}
+                    </main>
+                </Col>
+            </Row>
         </>
     )
 }
