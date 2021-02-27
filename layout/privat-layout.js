@@ -4,7 +4,6 @@ import { Row, Col } from 'reactstrap';
 
 // Components
 import { Header } from './header';
-import { SideBar } from './side-bar';
 
 export function PrivatLayout({ children, title = 'App Title | Next course' }) {
     return (

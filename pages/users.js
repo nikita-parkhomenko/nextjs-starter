@@ -1,10 +1,11 @@
 
 import { Container, Row } from 'reactstrap';
-import { PrivatLayout } from '../layout/privat-layout';
+
 import { API_BASE } from '../services/api.service';
+import { PrivatLayout } from '../layout/privat-layout';
 
 // Components
-import UserCard from '../layout/user-card';
+import UserCard from '../components/user-card';
 
 export default function Users({ users }) {
     console.log(users);
