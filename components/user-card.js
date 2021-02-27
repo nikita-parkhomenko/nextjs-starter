@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import {
     Col, CardImg, CardText, CardBody,
@@ -10,7 +11,7 @@ export default function UserCard(user) {
             <Card>
                 <CardImg top width="100" src={user.avatar} alt="Card image cap" />
                 <CardBody className="d-flex flex-column align-items-center">
-                    <Link href="/">
+                    <Link href="/users/[id]" as={`/users/${user.id}`}>
                         <a style={{ fontSize: '22px' }} className="text-primary" >
                             <CardTitle>
                                 {`${user.first_name} ${user.last_name}`}
