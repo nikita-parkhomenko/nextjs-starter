@@ -6,7 +6,6 @@ import {
     Nav,
     Navbar,
     NavItem,
-    NavbarBrand,
     DropdownMenu,
     DropdownItem,
     DropdownToggle,
@@ -30,7 +29,7 @@ export function Header() {
                     </a>
                 </Link>
                 <Nav className="d-flex align-items-center" navbar>
-                    <Link href="/users">
+                    <Link href="/employees">
                         <a className="pointer" >
                             <NavItem className="border-0 mr-4" >
                                 <FontAwesomeIcon className="mr-2" icon={faUserTie} />
@@ -62,7 +61,7 @@ export function Header() {
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem>
-                            <Link href="/user/[id]" as="/user/2" >
+                            <Link href="/user" >
                                 <a>Profile</a>
                             </Link>
                         </DropdownItem>
