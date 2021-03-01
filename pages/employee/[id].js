@@ -1,5 +1,4 @@
 
-import { useRouter } from 'next/router';
 import { Container, Row, Col, Badge, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -8,22 +7,22 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { API_BASE } from '../../services/api.service';
 import { PrivatLayout } from '../../layout/privat-layout';
 
-export default function User({ user }) {
-    console.log('user: ', user);
+export default function User({ employee }) {
+    console.log('employee: ', employee);
     return (
-        <PrivatLayout title="Post Page">
+        <PrivatLayout title="Employee Page">
             <Container>
                 <h1>Profile</h1>
                 <Row className="d-flex mt-3">
                     <Col sm="12">
                         <div className="text-center">
-                            <h1>{`${user.first_name} ${user.last_name}`}</h1>
+                            <h1>{`${employee.first_name} ${employee.last_name}`}</h1>
                             <Badge className="p-2" pill color="info">Next.js developer</Badge>
                             <div className="my-4">
                                 <img
                                     style={{ width: 250, height: 250 }}
                                     className="rounded-circle img-thumbnail"
-                                    src={user.avatar}
+                                    src={employee.avatar}
                                     alt="profile"
                                 />
                             </div>
@@ -68,7 +67,7 @@ export default function User({ user }) {
 User.getInitialProps = async ({ query }) => {
     const { id } = query;
     const response = await fetch(`${API_BASE}/users/${id}`);
-    const user = await response.json();
+    const employee = await response.json();
 
-    return { user: user.data }
+    return { employee: employee.data }
 }
