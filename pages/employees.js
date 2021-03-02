@@ -7,8 +7,16 @@ import { PrivatLayout } from '../layout/privat-layout';
 // Components
 import EmployeeCard from '../components/employee-card';
 
+export async function getStaticProps() {
+    const response = await fetch(`${API_BASE}/users`);
+    const employees = await response.json();
+
+    return {
+        props: { employees }
+    }
+}
+
 export default function Employees({ employees }) {
-    console.log(employees);
     return (
         <PrivatLayout title="Employees Page">
             <Container>
@@ -21,11 +29,4 @@ export default function Employees({ employees }) {
             </Container>
         </PrivatLayout>
     )
-}
-
-Employees.getInitialProps = async () => {
-    const response = await fetch(`${API_BASE}/users`);
-    const employees = await response.json();
-
-    return { employees }
 }
