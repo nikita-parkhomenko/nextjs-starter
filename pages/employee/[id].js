@@ -7,8 +7,33 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { API_BASE } from '../../services/api.service';
 import { PrivatLayout } from '../../layout/privat-layout';
 
-export default function User({ employee }) {
-    console.log('employee: ', employee);
+// this function gets called at build time
+export async function getStaticPaths() {
+    // call an externa api to get employees
+    const response = await fetch(`${API_BASE}/users`);
+    const employees = await response.json();
+    // get the paths we want to pre-render based on employees
+    const paths = employees.data.map((employee) => ({
+            // id must be a string type only
+            params: { id: employee.id.toString() }
+        })
+    )
+    // we'll pre-render only these paths at build time
+    // { fallback: false } means other routs should return 404
+    return { paths, fallback: false }
+}
+// this also get called at build time
+export async function getStaticProps({ params }) {
+    // params contain the employee 'id'
+    const response = await fetch(`${API_BASE}/users/${params.id}`);
+    const employee = await response.json();
+    // pass employee data to the page via props
+    return {
+        props: { employee: employee.data }
+    }
+}
+
+export default function Employee({ employee }) {
     return (
         <PrivatLayout title="Employee Page">
             <Container>
@@ -62,12 +87,4 @@ export default function User({ employee }) {
             </Container>
         </PrivatLayout>
     )
-}
-
-User.getInitialProps = async ({ query }) => {
-    const { id } = query;
-    const response = await fetch(`${API_BASE}/users/${id}`);
-    const employee = await response.json();
-
-    return { employee: employee.data }
 }

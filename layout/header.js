@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine, faCogs, faUserCircle, faUserTie } from '@fortawesome/free-solid-svg-icons'
@@ -74,7 +75,6 @@ export function Header() {
                         </DropdownItem>
                     </DropdownMenu>
                 </UncontrolledDropdown>
-
             </Navbar>
         </div>
     );
