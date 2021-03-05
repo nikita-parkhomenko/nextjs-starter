@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     const response = await fetch(`${API_BASE}/users`);
     const employees = await response.json();
     // get the paths we want to pre-render based on employees
-    const paths = employees.data.map((employee) => ({
+    const paths = employees.data.map(employee => ({
             // id must be a string type only
             params: { id: employee.id.toString() }
         })
@@ -53,7 +53,9 @@ export default function Employee({ employee }) {
                             </div>
                             <div className="text-dark w-50 m-auto">
                                 <p>
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ipsam laudantium, necessitatibus optio quaerat quasi velit. Adipisci eveniet facere reprehenderit? Accusamus accusantium culpa, esse facilis illo inventore magni quam ut.</span>
+                                    <span>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ipsam laudantium, necessitatibus optio quaerat quasi velit. Adipisci eveniet facere reprehenderit? Accusamus accusantium culpa, esse facilis illo inventore magni quam ut.
+                                    </span>
                                 </p>
                                 <hr />
                                 <div className="my-4 d-flex justify-content-center">
